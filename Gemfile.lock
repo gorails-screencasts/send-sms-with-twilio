@@ -211,6 +211,7 @@ GEM
       omniauth-oauth (~> 1.1)
       rack
     orm_adapter (0.5.0)
+    phonelib (0.6.36)
     popper_js (1.14.5)
     public_suffix (3.1.1)
     puma (3.12.1)
@@ -307,6 +308,10 @@ GEM
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
+    twilio-ruby (5.25.0)
+      faraday (~> 0.9)
+      jwt (>= 1.5, <= 2.5)
+      nokogiri (>= 1.6, < 2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     warden (1.2.8)
@@ -355,6 +360,7 @@ DEPENDENCIES
   omniauth-facebook (~> 5.0)
   omniauth-github (~> 1.3)
   omniauth-twitter (~> 1.4)
+  phonelib
   puma (~> 3.11)
   rails (~> 6.0.0.rc1)
   sass-rails (~> 5)
@@ -365,6 +371,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
+  twilio-ruby
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers
