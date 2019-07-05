@@ -1,0 +1,34 @@
+<%= form_with(model: conversation, local: true) do |form| %>
+  <% if conversation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(conversation.errors.count, "error") %> prohibited this conversation from being saved:</h2>
+
+      <ul>
+      <% conversation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :user_id %>
+    <%= form.collection_select :user_id, User.all, :id, :name, {}, { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group">
+    <% if conversation.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', conversation, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if conversation.persisted? %>
+      <%= link_to "Cancel", conversation, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", conversations_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

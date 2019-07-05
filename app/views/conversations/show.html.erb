@@ -1,0 +1,13 @@
+<div class="page-header">
+  <%= link_to conversations_path, class: 'btn btn-default' do %>
+    All Conversations
+  <% end %>
+  <%= link_to edit_conversation_path(@conversation), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1><%= @conversation.user.name %></h1>
+</div>
+
+<%= render @conversation.messages %>
+
+<%= render "messages/form", conversation: @conversation, message: Message.new %>

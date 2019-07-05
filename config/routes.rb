@@ -1,6 +1,14 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  namespace :webhooks do
+    resource :twilio, controller: :twilio, only: [:create]
+  end
+
+  resources :conversations do
+    resources :messages
+  end
+
   namespace :admin do
       resources :users
 
